@@ -25,8 +25,16 @@ int main() {
 }
 
 char *alloc(int pedido) {
+  if (pedido > buffer + BUFFER_SIZE - m) {
+    return NULL;
+  }
   m += pedido;
   return m - pedido;
 }
 
-void afree(char *pc) { m = pc; }
+void afree(char *pc) {
+  if ((pc < buffer) && (pc > m)) {
+    return;
+  }
+  m = pc;
+}
