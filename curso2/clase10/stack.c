@@ -6,9 +6,9 @@ struct node {
   struct node *prev;
 };
 
-struct node *top;
+struct node *top = NULL;
 
-struct node *push(char c);
+void push(char c);
 char pop();
 int is_empty();
 
@@ -17,14 +17,24 @@ int main() {
   push('l');
   push('o');
   push('h');
-  while (is_empty() != 0) {
+  while (!is_empty()) {
     printf("%c", pop());
   }
 }
 
-struct node *push(char c) {
+void push(char c) {
   struct node *pnode = (struct node *)malloc(sizeof(struct node));
   pnode->prev = top;
   pnode->value = c;
   top = pnode;
 }
+
+char pop() {
+  struct node *temp = top;
+  char c = temp->value;
+  top = top->prev;
+  free(temp);
+  return c;
+}
+
+int is_empty() { return NULL == top; }
