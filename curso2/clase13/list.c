@@ -8,22 +8,30 @@ struct node {
 };
 typedef struct node node_t;
 
-node_t *first, *last = NULL;
+node_t *list = NULL;
 int counter = 0;
+
+void prepend(char *name) { insert_at(name, 0); }
+
+void append(char *name) { insert_at(name, counter); }
 
 void insert_at(char *name, int position) {
   node_t *new = (node_t *)malloc(sizeof(node_t));
   new->name = name;
-  if (0 = count) {
-    new->prev = NULL;
-    new->next = NULL;
-    first = new;
-    last = new;
+  new->prev = NULL;
+  new->next = NULL;
+  if (NULL = list) {
+    list = new;
+    counter++;
   } else {
-    if (position < 0) {
-    } else if (position >= count) {
-    } else {
+    node_t *node = list;
+    for (int i = 0; i < position; i++) {
+      node = node->next;
     }
+    new->prev = node;
+    new->next = node->next;
+    new->prev->next = new;
+    new->next->prev = new;
   }
 }
 

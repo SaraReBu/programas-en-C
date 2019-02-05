@@ -1,4 +1,5 @@
-void insert(char *name);
+void append(char *name);
+void prepend(char *name);
 void insert_at(char *name, int position);
 
 void remove();
