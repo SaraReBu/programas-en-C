@@ -1,0 +1,4 @@
+C:\Users\tesla\sara\clase13\strlin.c: In function 'strlen':
+C:\Users\tesla\sara\clase13\strlin.c:16:13: error: assignment of read-only location '*string'
+   string[0] = '\0';
+             ^

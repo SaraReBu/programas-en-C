@@ -20,19 +20,35 @@ void insert_at(char *name, int position) {
   new->name = name;
   new->prev = NULL;
   new->next = NULL;
-  if (NULL = list) {
+  if (NULL == list) {
     list = new;
-    counter++;
+  } else if (position <= 0) {
+    new->next = list;
+    new->next->prev = new;
+    list = new;
   } else {
     node_t *node = list;
-    for (int i = 0; i < position; i++) {
+    for (int i = 0; i < position - 1; i++) {
       node = node->next;
     }
     new->prev = node;
     new->next = node->next;
     new->prev->next = new;
-    new->next->prev = new;
+    if (new->next != NULL) {
+      new->next->prev = new;
+    }
   }
+  counter++;
+}
+
+void remove_at(int position) {}
+
+char *item_at(int position) {
+  node_t *link = list;
+  for (int i = 0; i < position; i++) {
+    link = link->next;
+  }
+  return link->name;
 }
 
 int count() { return counter; }
