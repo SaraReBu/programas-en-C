@@ -28,7 +28,7 @@ void insert_at(char *name, int position) {
     list = new;
   } else {
     node_t *node = list;
-    for (int i = 0; i < position - 1; i++) {
+    for (int i = 0; i < position - 1 && node->next != NULL; i++) {
       node = node->next;
     }
     new->prev = node;
@@ -41,7 +41,31 @@ void insert_at(char *name, int position) {
   counter++;
 }
 
-void remove_at(int position) {}
+void remove_at(int position) {
+  if (NULL == list) {
+    return;
+  } else if (position <= 0) {
+    node_t *temp = list;
+    if (temp->next != NULL) {
+      temp->next->prev = NULL;
+    }
+    list = temp->next;
+    free(temp);
+  } else {
+    node_t *node = list;
+    for (int i = 0; i < position && node->next != NULL; i++) {
+      node = node->next;
+    }
+    if (node->prev != NULL) {
+      node->prev->next = node->next;
+    }
+    if (node->next != NULL) {
+      node->next->prev = node->prev;
+    }
+    free(node);
+  }
+  counter--;
+}
 
 char *item_at(int position) {
   node_t *link = list;
