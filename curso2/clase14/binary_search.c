@@ -4,13 +4,16 @@ int binary_search(char item);
 
 char list[] = {'b', 'c', 'd', 'e'};
 
+void printfbinary_search(char c);
+
 int main() {
-  printf("%d\n", binary_search('b'));
-  printf("%d\n", binary_search('c'));
-  printf("%d\n", binary_search('a'));
-  printf("%d\n", binary_search('d'));
-  printf("%d\n", binary_search('e'));
-  printf("%d\n", binary_search('g'));
+
+  printfbinary_search('b');
+  printfbinary_search('c');
+  printfbinary_search('a');
+  printfbinary_search('d');
+  printfbinary_search('e');
+  printfbinary_search('g');
 }
 
 int binary_search(char item) {
@@ -29,4 +32,10 @@ int binary_search(char item) {
     }
   }
   return -1;
+}
+
+void printfbinary_search(char c) {
+  printf(binary_search(c) >= 0 ? "%c se encuentra en la posicion %d\n"
+                               : "%c no se encuentra en list\n",
+         c, binary_search(c));
 }
