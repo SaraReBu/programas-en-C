@@ -1,0 +1,9 @@
+{
+    "C_Cpp.default.compilerPath": "C:\\msys64\\mingw64\\bin\\gcc.exe",
+    "C_Cpp.default.includePath": [
+        "$(workspaceFolder)/**",
+    ],
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "C_Cpp.clang_format_path": "C:\\Program Files\\LLVM\\bin\\clang-format",
+}
