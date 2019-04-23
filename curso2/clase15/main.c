@@ -1,8 +1,9 @@
 #include "list.h"
 #include <stdio.h>
 
-int main() {
-  list_t list;
+int main()
+{
+  list_t list = NULL;
   list = append(list, "Adrian");
   list = append(list, "Silvia");
   list = prepend(list, "Ian");
@@ -11,7 +12,8 @@ int main() {
   list = insert_at(list, "Beatriz", 3);
   list = remove_at(list, 4);
   list = remove_at(list, 0);
-  for (int i = 0; i < count(list); i++) {
+  for (int i = 0; i < count(list); i++)
+  {
     printf("%s\n", item_at(list, i));
   }
 }
