@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "list"
+		},
+		{
+			"path": "selection_sort"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"stdio.h": "c",
+			"list.h": "c"
+		}
+	}
+}
