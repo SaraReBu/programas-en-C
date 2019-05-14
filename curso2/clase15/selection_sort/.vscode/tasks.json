@@ -12,7 +12,7 @@
                 "..\\list\\list.c",
                 "sort.c",
                 "-o",
-                "list.exe",
+                "sort.exe",
                 "-g",
             ],
             "group": {

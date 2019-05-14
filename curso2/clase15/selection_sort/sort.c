@@ -1,11 +1,13 @@
 #include "sort.h"
+#include <string.h>
 
 int biggest(list_t list);
 
 list_t sort(list_t list) {
   list_t sorted = NULL;
   // 1º recorrer tantas veces como numero de elmentos
-  for (int i = 0; i < count(list); i++) {
+  int c=count(list);
+  for (int i = 0; i <c; i++) {
     // 2º encontrar el mas grande
     int position = biggest(list);
     // 3º append en sorted(lista ordenada)
@@ -27,7 +29,7 @@ int biggest(list_t list) {
     // obtener el elemento de i
     void *current = item_at(list, i);
     // comparar
-    if (current > biggest) {
+    if (strcmp(current, biggest) > 0) {
       biggest = current;
       biggest_position = i;
     }
