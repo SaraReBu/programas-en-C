@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "list"
+		},
+		{
+			"path": "apply"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"list.h": "c"
+		}
+	}
+}

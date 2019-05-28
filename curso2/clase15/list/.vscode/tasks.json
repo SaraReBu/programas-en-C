@@ -12,12 +12,9 @@
                 "list.c",
                 "-o",
                 "list.exe",
-                "-g",
+                "-g"
             ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
+            "group": "build"
         }
     ]
 }
