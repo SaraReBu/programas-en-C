@@ -1,8 +1,8 @@
 #include "..\list\list.h"
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 #include <ctype.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 list_t apply(list_t, void *(*)(const void *));
 
@@ -10,17 +10,14 @@ void *capitalize_naive(const void *);
 
 void *capitalize(const void *);
 
-void printflist(char *msg, list_t list)
-{
+void printflist(char *msg, list_t list) {
   printf("%s\n", msg);
-  for (int i = 0; i < count(list); i++)
-  {
+  for (int i = 0; i < count(list); i++) {
     printf("%s\n", item_at(list, i));
   }
 }
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
   list_t list = NULL;
   list = append(list, "A");
   list = append(list, "b");
@@ -34,25 +31,21 @@ int main(int argc, char const *argv[])
   printflist("capitalized :)", capitalized);
 }
 
-void *capitalize_naive(const void *src)
-{
+void *capitalize_naive(const void *src) {
   size_t len = strlen(src);
   char *dst = malloc(len + 1);
   strcpy(dst, src);
-  for (int i = 0; i < len; i++)
-  {
+  for (int i = 0; i < len; i++) {
     dst[i] = dst[i] - 32;
   }
   return dst;
 }
 
-void *capitalize(const void *src)
-{
+void *capitalize(const void *src) {
   size_t len = strlen(src);
   char *dst = malloc(len + 1);
   strcpy(dst, src);
-  for (int i = 0; i < len; i++)
-  {
+  for (int i = 0; i < len; i++) {
     dst[i] = toupper(dst[i]);
   }
   return dst;
