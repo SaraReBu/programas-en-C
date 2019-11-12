@@ -1,0 +1,5 @@
+number = input("Dame un número decimal: ")
+number = int(number)
+print(f'en binario es\t\t 0b{number:b}')
+print(f'en octal es\t\t 0o{number:o}')
+print(f'en hexadecimal es\t 0X{number:X}')
