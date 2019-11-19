@@ -7,4 +7,5 @@ while number != 0:
     r = number % base
     number = number // base
     l.append(r)
-print(l)
+l.reverse()
+print(*l, sep="")
